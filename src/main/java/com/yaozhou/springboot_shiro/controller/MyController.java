@@ -8,6 +8,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by WXHang on HANG at 2021/9/9 15:46
@@ -57,5 +58,13 @@ public class MyController {
             return "login";
         }
 
+    }
+
+
+    @RequestMapping("noauth")
+    @ResponseBody
+    public String noAuth(){
+
+        return "未经授权无法访问此页面";
     }
 }
